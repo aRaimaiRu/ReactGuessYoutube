@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import YouTube from "react-youtube";
 import someobject from "./anydata.json";
-const data = require("./anydata.json");
+//const data = require("./anydata.json");
 
 function App() {
   const [url, seturl] = useState("PWbi8J1_X5Q");
@@ -35,7 +35,6 @@ function App() {
       <div style={{ display: isHide ? "block" : "none" }}>
         <YouTube videoId={url} opts={opts} onReady={onReady} />
       </div>
-      <button onClick={() => log(data)}>require</button>
       <button onClick={() => log(someobject)}>someobject</button>
       <button
         onClick={() => {
