@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import YouTube from "react-youtube";
-import someobject from "./anydata.json";
+import someobject from "./cccc_1.json";
 //const data = require("./anydata.json");
 import {filterByVote} from "./util.js"
 function App() {
