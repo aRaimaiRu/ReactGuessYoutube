@@ -29,12 +29,7 @@ function App() {
   function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
-  function randomURL() {
-    //console.log(obj)
-    const getRint = getRndInteger(0, Object.keys(obj.vote1).length);
-    console.log(obj.keys[getRint]);
-    return obj.keys[getRint];
-  }
+
   function randomURLV2() {
     var randomInd = ind[Math.floor(Math.random() * ind.length)];
     console.log("randomitem = ", randomInd);
