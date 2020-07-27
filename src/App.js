@@ -43,7 +43,7 @@ function App() {
       >
         randomlog number
       </button>
-      <button onClick={() => log(someobject.key[0])}>log data</button>
+      <button onClick={() => log(someobject.key)}>log data</button>
       <button onClick={() => setIsHide(() => !isHide)}>toggle hide </button>
       <button onClick={() => seturl(randomURL())}>random URL </button>
     </div>
