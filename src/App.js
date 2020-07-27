@@ -3,12 +3,16 @@ import { useState } from "react";
 import YouTube from "react-youtube";
 import someobject from "./aaaaaa.json";
 //const data = require("./anydata.json");
-import { filterByVote } from "./util.js";
+import { filterByVote, createNumeralArray } from "./util.js";
 function App() {
   var obj = someobject;
   console.log(obj);
   const [url, seturl] = useState("PWbi8J1_X5Q");
   const [isHide, setIsHide] = useState(false);
+  const [ind, setind] = useState(
+    createNumeralArray(Object.keys(obj.vote1).length)
+  );
+  console.log(ind);
   const opts = {
     height: "390",
     width: "640",
@@ -28,10 +32,15 @@ function App() {
   function randomURL() {
     //console.log(obj)
     const getRint = getRndInteger(0, Object.keys(obj.vote1).length);
-    console.log(obj.keys[getRint])
+    console.log(obj.keys[getRint]);
     return obj.keys[getRint];
   }
-
+  function randomURLV2() {
+    var randomItem = ind[Math.floor(Math.random() * ind.length)];
+    setind((ind) => ind.filter(randomItem));
+    console.log("randomitem = ", randomItem);
+    return obj.keys[ind];
+  }
   function filterEasy() {
     obj = filterByVote(obj);
     //console.log(obj);
