@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import YouTube from "react-youtube";
-import someobject from "./cccc_1.json";
+import someobject from "./aaaaaa.json";
 //const data = require("./anydata.json");
 import { filterByVote } from "./util.js";
 function App() {
@@ -26,9 +26,10 @@ function App() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
   function randomURL() {
+    //console.log(obj)
     const getRint = getRndInteger(0, Object.keys(obj.vote1).length);
-
-    return obj.key[getRint];
+    console.log(obj.keys[getRint])
+    return obj.keys[getRint];
   }
 
   function filterEasy() {
@@ -50,7 +51,7 @@ function App() {
 
       <button
         onClick={() => {
-          console.log(obj.key);
+          console.log(obj.keys);
         }}
       >
         log data
