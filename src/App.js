@@ -3,11 +3,10 @@ import { useState } from "react";
 import YouTube from "react-youtube";
 import someobject from "./cccc_1.json";
 //const data = require("./anydata.json");
-import {filterByVote} from "./util.js"
+import { filterByVote } from "./util.js";
 function App() {
-  
-  var obj = someobject
-  console.log(obj)
+  var obj = someobject;
+  console.log(obj);
   const [url, seturl] = useState("PWbi8J1_X5Q");
   const [isHide, setIsHide] = useState(false);
   const opts = {
@@ -27,14 +26,14 @@ function App() {
     return Math.floor(Math.random() * (max - min)) + min;
   }
   function randomURL() {
-    const getRint = getRndInteger(0, Object.keys( obj.vote1 ).length);
- 
+    const getRint = getRndInteger(0, Object.keys(obj.vote1).length);
+
     return obj.key[getRint];
   }
 
-  function filterEasy(){
-    obj = filterByVote(obj)
-    console.log(obj)
+  function filterEasy() {
+    obj = filterByVote(obj);
+    //console.log(obj);
   }
 
   return (
@@ -44,16 +43,30 @@ function App() {
       </div>
 
       <div style={{ display: !isHide ? "block" : "none" }}>
-        <div style = {{backgroundColor:"Black",height:390,width:640}}></div>
+        <div
+          style={{ backgroundColor: "Black", height: 390, width: 640 }}
+        ></div>
       </div>
 
-      <button onClick={() => {console.log(obj.key)}}>log data</button>
+      <button
+        onClick={() => {
+          console.log(obj.key);
+        }}
+      >
+        log data
+      </button>
       <button onClick={() => setIsHide(() => !isHide)}>toggle hide </button>
-      <button onClick={() => seturl(randomURL())}>random URL </button>
-      <button onClick={() => filterEasy() }>Easy Mode </button>
+      <button
+        onClick={() => {
+          seturl(randomURL());
+          setIsHide(() => false);
+        }}
+      >
+        random URL{" "}
+      </button>
+      <button onClick={() => filterEasy()}>Easy Mode </button>
     </div>
   );
 }
 
 export default App;
-
