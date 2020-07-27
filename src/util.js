@@ -5,7 +5,7 @@ const filterByVote = (t ) => {
 //    console.log(t.vote1)
 
     const filterKeyArray = createNumeralArray(Object.keys( t.vote1 ).length)
-                    .reduce((sum,c) => t.vote1[c]>3?[...sum,c]:sum, [])
+                    .reduce((sum,c) => t.vote1[c]>6?[...sum,c]:sum, [])
     //console.log(filterKeyArray)
     const newKey  = filterKeyArray.map((i) => t.key[i])
     const newName =  filterKeyArray.map((i) => t.name[i])

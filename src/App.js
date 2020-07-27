@@ -5,7 +5,9 @@ import someobject from "./anydata.json";
 //const data = require("./anydata.json");
 import {filterByVote} from "./util.js"
 function App() {
+  
   var obj = someobject
+  console.log(obj)
   const [url, seturl] = useState("PWbi8J1_X5Q");
   const [isHide, setIsHide] = useState(false);
   const opts = {
@@ -41,6 +43,10 @@ function App() {
     <div className="App">
       <div style={{ display: isHide ? "block" : "none" }}>
         <YouTube videoId={url} opts={opts} onReady={onReady} />
+      </div>
+
+      <div style={{ display: !isHide ? "block" : "none" }}>
+        <div style = {{backgroundColor:"Black",height:390,width:640}}></div>
       </div>
 
       <button onClick={() => log(obj.key)}>log data</button>
