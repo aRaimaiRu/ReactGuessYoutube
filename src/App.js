@@ -22,9 +22,7 @@ function App() {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
   };
-  function log(somedata) {
-    console.log(somedata);
-  }
+
   function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
@@ -49,7 +47,7 @@ function App() {
         <div style = {{backgroundColor:"Black",height:390,width:640}}></div>
       </div>
 
-      <button onClick={() => log(obj.key)}>log data</button>
+      <button onClick={() => {console.log(obj.key)}}>log data</button>
       <button onClick={() => setIsHide(() => !isHide)}>toggle hide </button>
       <button onClick={() => seturl(randomURL())}>random URL </button>
       <button onClick={() => filterEasy() }>Easy Mode </button>
@@ -58,3 +56,4 @@ function App() {
 }
 
 export default App;
+
