@@ -36,10 +36,10 @@ function App() {
     return obj.keys[getRint];
   }
   function randomURLV2() {
-    var randomItem = ind[Math.floor(Math.random() * ind.length)];
-    setind((ind) => ind.filter(randomItem));
-    console.log("randomitem = ", randomItem);
-    return obj.keys[ind];
+    var randomInd = ind[Math.floor(Math.random() * ind.length)];
+    console.log("randomitem = ", randomInd);
+    setind((ind) => ind.filter((ind) => ind != randomInd));
+    return obj.keys[randomInd];
   }
   function filterEasy() {
     obj = filterByVote(obj);
@@ -68,7 +68,7 @@ function App() {
       <button onClick={() => setIsHide(() => !isHide)}>toggle hide </button>
       <button
         onClick={() => {
-          seturl(randomURL());
+          seturl(randomURLV2());
           setIsHide(() => false);
         }}
       >
