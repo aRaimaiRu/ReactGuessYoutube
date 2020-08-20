@@ -44,28 +44,28 @@ function App() {
   }
 
   return (
-    <div className="App" style ={{'backgroundColor':'#eef5fa' , fontFamily: 'Comfortaa' }} >
-      
-      <div style = {{display: 'flex' , flexDirection : 'column' }}>
+    <div className="App" style ={{'backgroundColor':'#eef5fa' , fontFamily: 'Comfortaa',height: window.innerHeight}} >
+ 
+      <div style = {{display: 'flex' ,flexDirection : 'column'}}>
         <h1 style = {{textAlign : 'center' , color:'	#719cad'}}>
           ReactGuessYoutube
         </h1>
-        <div style ={{margin:'auto',padding:20}}>
-      <div style={{ display: isHide ? "block" : "none" }}>
+        <div style ={{margin:'auto',padding:20 }}>
+      <div style={{ display: isHide ? "block" : "none" }}> 
         <YouTube videoId={url} opts={opts} onReady={onReady} />
       </div>
 
-      <div style={{ display: !isHide ? "block" : "none" }}>
+      <div style={{ display: !isHide ? "block" : "none"  }}>
         <div
-          style={{ backgroundColor: '#496370', height: 390, width: 640 }}
+          style={{ backgroundColor: '#496370', height: 390, width: 640 , borderRadius:10}}
         ></div>
       </div>
       </div>
 
       <div style  ={{flexDirection:"column", textAlign:'center'}}>
 
-      <Button onClick={() => setIsHide(() => !isHide)} style ={{margin:20}}>toggle hide </Button>
-      <Button style ={{margin:20}}
+      <Button onClick={() => setIsHide(() => !isHide)} style ={{margin:20 , fontFamily: 'Comfortaa'}}>toggle hide </Button>
+      <Button style ={{margin:20 , fontFamily: 'Comfortaa'}}
         onClick={() => {
           seturl(randomURLV2());
           setIsHide(() => false);
@@ -76,7 +76,10 @@ function App() {
       </div>
     </div>
     </div>
+   
   );
 }
+
+
 
 export default App;
