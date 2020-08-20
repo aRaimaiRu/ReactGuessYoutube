@@ -6,6 +6,7 @@ import someobject from "./aaaaaa.json";
 import { filterByVote, createNumeralArray } from "./util.js";
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';  
+import Background from './ev_263.png';
 function App() {
   var obj = someobject;
   console.log(obj);
@@ -44,8 +45,8 @@ function App() {
   }
 
   return (
-    <div className="App" style ={{'backgroundColor':'#eef5fa' , fontFamily: 'Comfortaa',height: window.innerHeight}} >
- 
+    <div className="App" style ={{'backgroundColor':'#eef5fa' , fontFamily: 'Comfortaa'}} >
+<div style = {{backgroundImage: `url(${Background})` ,height: window.innerHeight }}>
       <div style = {{display: 'flex' ,flexDirection : 'column'}}>
         <h1 style = {{textAlign : 'center' , color:'	#719cad'}}>
           ReactGuessYoutube
@@ -74,6 +75,7 @@ function App() {
         random URL{" "}
       </Button>
       </div>
+    </div>
     </div>
     </div>
    
