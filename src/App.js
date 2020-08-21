@@ -4,6 +4,9 @@ import YouTube from "react-youtube";
 import someobject from "./aaaaaa.json";
 //const data = require("./anydata.json");
 import { filterByVote, createNumeralArray } from "./util.js";
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';  
+import Background from './unknown.png';
 function App() {
   var obj = someobject;
   console.log(obj);
@@ -42,36 +45,43 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div style={{ display: isHide ? "block" : "none" }}>
+    <div className="App" style ={{'backgroundColor':'#eef5fa' , fontFamily: 'Comfortaa'}} >
+<div style = {{backgroundImage: `url(${Background})` ,height: window.innerHeight ,backgroundSize:'cover' }}>
+      <div style = {{display: 'flex' ,flexDirection : 'column',paddingTop:'50px'}}>
+        <h1 style = {{textAlign : 'center' , color:'	#719cad'}}>
+          ReactGuessYoutube
+        </h1>
+        <div style ={{margin:'auto',padding:20 }}>
+      <div style={{ display: isHide ? "block" : "none" }}> 
         <YouTube videoId={url} opts={opts} onReady={onReady} />
       </div>
 
-      <div style={{ display: !isHide ? "block" : "none" }}>
+      <div style={{ display: !isHide ? "block" : "none"  }}>
         <div
-          style={{ backgroundColor: "Black", height: 390, width: 640 }}
+          style={{ backgroundColor: '#496370', height: 390, width: 640 , borderRadius:10}}
         ></div>
       </div>
+      </div>
 
-      <button
-        onClick={() => {
-          console.log(obj.keys);
-        }}
-      >
-        log data
-      </button>
-      <button onClick={() => setIsHide(() => !isHide)}>toggle hide </button>
-      <button
+      <div style  ={{flexDirection:"column", textAlign:'center'}}>
+
+      <Button onClick={() => setIsHide(() => !isHide)} style ={{margin:20 , fontFamily: 'Comfortaa'}}>toggle hide </Button>
+      <Button style ={{margin:20 , fontFamily: 'Comfortaa'}}
         onClick={() => {
           seturl(randomURLV2());
           setIsHide(() => false);
         }}
       >
         random URL{" "}
-      </button>
-      <button onClick={() => filterEasy()}>Easy Mode </button>
+      </Button>
+      </div>
     </div>
+    </div>
+    </div>
+   
   );
 }
+
+
 
 export default App;
