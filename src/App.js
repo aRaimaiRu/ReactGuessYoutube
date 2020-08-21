@@ -14,8 +14,10 @@ const StyleAPP = styled.div`
   font-family: Comfortaa;
 `;
 const StyleButton = styled(Button)`
-  margin: 20;
-  font-family: Comfortaa;
+  && {
+    margin: 20px;
+    font-family: Comfortaa;
+  }
 `;
 const Styleh1 = styled.h1`
   text-align: center;
@@ -100,17 +102,11 @@ function App() {
             </StyleTriggerHide>
           </StyleYoutubeFrame>
 
-          <StyleButtonFrame
-            style={{ flexDirection: "column", textAlign: "center" }}
-          >
-            <StyleButton
-              onClick={() => setIsHide(() => !isHide)}
-              style={{ margin: 20, fontFamily: "Comfortaa" }}
-            >
+          <StyleButtonFrame>
+            <StyleButton onClick={() => setIsHide(() => !isHide)}>
               toggle hide{" "}
             </StyleButton>
             <StyleButton
-              style={{ margin: 20, fontFamily: "Comfortaa" }}
               onClick={() => {
                 seturl(randomURLV2());
                 setIsHide(() => false);
