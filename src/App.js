@@ -4,9 +4,50 @@ import YouTube from "react-youtube";
 import someobject from "./aaaaaa.json";
 //const data = require("./anydata.json");
 import { filterByVote, createNumeralArray } from "./util.js";
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';  
-import Background from './unknown.png';
+import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Background from "./unknown.png";
+import styled from "styled-components";
+
+const StyleAPP = styled.div`
+  background-color: #eef5fa;
+  font-family: Comfortaa;
+`;
+const StyleButton = styled(Button)`
+  margin: 20;
+  font-family: Comfortaa;
+`;
+const Styleh1 = styled.h1`
+  text-align: center;
+  color: #719cad;
+`;
+const StyleBG = styled.div`
+  background-image: url(${Background});
+  height: ${(props) => props.Height};
+  background-size: cover;
+`;
+const StyleBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+`;
+const StyleYoutubeFrame = styled.div`
+  margin: auto;
+  padding: 20;
+`;
+const StyleTriggerHide = styled.div`
+  display: ${(props) => (props.isHide ? "block" : "none")};
+`;
+const Stylemaibok = styled.div`
+  background-color: #496370;
+  height: 390px;
+  width: 640px;
+  border-radius: 10px;
+`;
+const StyleButtonFrame = styled.div`
+  flex-direction: column;
+  text-align: center;
+`;
 function App() {
   var obj = someobject;
   console.log(obj);
@@ -45,43 +86,43 @@ function App() {
   }
 
   return (
-    <div className="App" style ={{'backgroundColor':'#eef5fa' , fontFamily: 'Comfortaa'}} >
-<div style = {{backgroundImage: `url(${Background})` ,height: window.innerHeight ,backgroundSize:'cover' }}>
-      <div style = {{display: 'flex' ,flexDirection : 'column',paddingTop:'50px'}}>
-        <h1 style = {{textAlign : 'center' , color:'	#719cad'}}>
-          ReactGuessYoutube
-        </h1>
-        <div style ={{margin:'auto',padding:20 }}>
-      <div style={{ display: isHide ? "block" : "none" }}> 
-        <YouTube videoId={url} opts={opts} onReady={onReady} />
-      </div>
+    <StyleAPP className="App">
+      <StyleBG style={{ height: window.innerHeight }}>
+        <StyleBody>
+          <Styleh1>ReactGuessYoutube</Styleh1>
+          <StyleYoutubeFrame>
+            <StyleTriggerHide isHide={isHide}>
+              <YouTube videoId={url} opts={opts} onReady={onReady} />
+            </StyleTriggerHide>
 
-      <div style={{ display: !isHide ? "block" : "none"  }}>
-        <div
-          style={{ backgroundColor: '#496370', height: 390, width: 640 , borderRadius:10}}
-        ></div>
-      </div>
-      </div>
+            <StyleTriggerHide isHide={!isHide}>
+              <Stylemaibok />
+            </StyleTriggerHide>
+          </StyleYoutubeFrame>
 
-      <div style  ={{flexDirection:"column", textAlign:'center'}}>
-
-      <Button onClick={() => setIsHide(() => !isHide)} style ={{margin:20 , fontFamily: 'Comfortaa'}}>toggle hide </Button>
-      <Button style ={{margin:20 , fontFamily: 'Comfortaa'}}
-        onClick={() => {
-          seturl(randomURLV2());
-          setIsHide(() => false);
-        }}
-      >
-        random URL{" "}
-      </Button>
-      </div>
-    </div>
-    </div>
-    </div>
-   
+          <StyleButtonFrame
+            style={{ flexDirection: "column", textAlign: "center" }}
+          >
+            <StyleButton
+              onClick={() => setIsHide(() => !isHide)}
+              style={{ margin: 20, fontFamily: "Comfortaa" }}
+            >
+              toggle hide{" "}
+            </StyleButton>
+            <StyleButton
+              style={{ margin: 20, fontFamily: "Comfortaa" }}
+              onClick={() => {
+                seturl(randomURLV2());
+                setIsHide(() => false);
+              }}
+            >
+              random URL{" "}
+            </StyleButton>
+          </StyleButtonFrame>
+        </StyleBody>
+      </StyleBG>
+    </StyleAPP>
   );
 }
-
-
 
 export default App;
