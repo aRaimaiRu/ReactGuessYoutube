@@ -4,10 +4,6 @@ import YouTube from "react-youtube";
 import someobject from "./aaaaaa.json";
 //const data = require("./anydata.json");
 import { filterByVote, createNumeralArray } from "./util.js";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import Background from "./unknown.png";
-import styled from "styled-components";
 import {
   StyleAPP,
   StyleButton,
@@ -28,6 +24,7 @@ function App() {
   const [ind, setind] = useState(
     createNumeralArray(Object.keys(obj.vote1).length)
   );
+  const [count, setcound] = useState(1);
   console.log(ind);
   const opts = {
     height: "390",
@@ -47,6 +44,7 @@ function App() {
   }
 
   function randomURLV2() {
+    setcound((count) => (count += 1));
     var randomInd = ind[Math.floor(Math.random() * ind.length)];
     console.log("randomitem = ", randomInd);
     setind((ind) => ind.filter((ind) => ind != randomInd));
@@ -73,6 +71,9 @@ function App() {
           </StyleYoutubeFrame>
 
           <StyleButtonFrame>
+            <Styleh1>
+              {count}/{Object.keys(obj.vote1).length}
+            </Styleh1>
             <StyleButton onClick={() => setIsHide(() => !isHide)}>
               toggle hide{" "}
             </StyleButton>
