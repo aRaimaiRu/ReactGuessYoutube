@@ -8,7 +8,7 @@ import all_vn from "./all_vn.json"
 
 //const data = require("./anydata.json");
 
-import { filterByVote, createNumeralArray } from "./util.js";
+import { filterByVote, createNumeralArray,jsonObjectTolist } from "./util.js";
 import {
   StyleAPP,
   StyleButton,
@@ -119,6 +119,17 @@ function App() {
             <Styleh1>
               {count}/{Object.keys(obj.vote1).length}
             </Styleh1>
+
+            <Autocomplete
+        id="free-solo-demo"
+        
+        options={jsonObjectTolist(quaryData.name_romanji)}
+        renderInput={(params) => (
+          <TextField {...params} label="input" margin="normal" variant="outlined"  autoComplete='off' />
+        )}
+      />
+
+
             <StyleButton onClick={() => setIsHide(() => !isHide)}>
               toggle hide{" "}
             </StyleButton>
