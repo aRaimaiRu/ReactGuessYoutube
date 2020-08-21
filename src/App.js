@@ -2,7 +2,12 @@ import React from "react";
 import { useState } from "react";
 import YouTube from "react-youtube";
 import someobject from "./aaaaaa.json";
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
+import all_vn from "./all_vn.json"
+
 //const data = require("./anydata.json");
+
 import { filterByVote, createNumeralArray } from "./util.js";
 import {
   StyleAPP,
@@ -23,15 +28,17 @@ import {
 } from "./style_component";
 
 function App() {
+  var quaryData = all_vn;
+  console.log(quaryData)
   var obj = someobject;
-  console.log(obj);
+  // console.log(obj);
   const [url, seturl] = useState("PWbi8J1_X5Q");
   const [isHide, setIsHide] = useState(false);
   const [ind, setind] = useState(
     createNumeralArray(Object.keys(obj.vote1).length)
   );
   const [count, setcound] = useState(1);
-  console.log(ind);
+  // console.log(ind);
   const opts = {
     height: "390",
     width: "640",
