@@ -43,7 +43,66 @@ const StyleButtonFrame = styled.div`
   flex-direction: column;
   text-align: center;
 `;
+const Frametop = styled.div`
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
+  position: fixed;
+  background: #b6da3e;
+  pointer-events: none;
+  z-index: 9999;
+`;
+const Frameright = styled.div`
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  position: fixed;
+  background: #b6da3e;
+  pointer-events: none;
+  z-index: 9999;
+`;
+const FrameBottom = styled.div`
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 7px;
 
+  position: fixed;
+  background: #b6da3e;
+  pointer-events: none;
+  z-index: 9999;
+`;
+const FrameLeft = styled.div`
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 100%;
+
+  position: fixed;
+  background: #b6da3e;
+  pointer-events: none;
+  z-index: 9999;
+`;
+const TopRightTriangle = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 75px;
+  height: 160px;
+  pointer-events: none;
+  z-index: 9998;
+`;
+const BottomLeftTriangle = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 75px;
+  height: 160px;
+  pointer-events: none;
+  z-index: 9998;
+`;
 export {
   StyleAPP,
   StyleButton,
@@ -54,4 +113,10 @@ export {
   StyleTriggerHide,
   Stylemaibok,
   StyleButtonFrame,
+  Frametop,
+  Frameright,
+  FrameBottom,
+  FrameLeft,
+  TopRightTriangle,
+  BottomLeftTriangle,
 };

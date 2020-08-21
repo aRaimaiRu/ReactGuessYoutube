@@ -14,6 +14,12 @@ import {
   StyleTriggerHide,
   Stylemaibok,
   StyleButtonFrame,
+  Frametop,
+  Frameright,
+  FrameBottom,
+  FrameLeft,
+  TopRightTriangle,
+  BottomLeftTriangle,
 } from "./style_component";
 
 function App() {
@@ -57,6 +63,38 @@ function App() {
 
   return (
     <StyleAPP className="App">
+      <Frametop></Frametop>
+      <Frameright></Frameright>
+      <FrameLeft></FrameLeft>
+      <FrameBottom></FrameBottom>
+
+      <TopRightTriangle>
+        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="160">
+          <line
+            x1="0"
+            y1="0"
+            x2="75"
+            y2="160"
+            stroke="#b6b6b6"
+            stroke-width="6"
+          ></line>
+          <polygon points="0, 0 75, 0 75, 160 0, 0" fill="#b6da3e"></polygon>
+        </svg>
+      </TopRightTriangle>
+      <BottomLeftTriangle>
+        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="160">
+          <line
+            x1="0"
+            y1="0"
+            x2="75"
+            y2="160"
+            stroke="#b6b6b6"
+            stroke-width="6"
+          ></line>
+          <polygon points="0, 0 0, 160 75, 160 0, 0" fill="#b6da3e"></polygon>
+        </svg>
+      </BottomLeftTriangle>
+
       <StyleBG style={{ height: window.innerHeight }}>
         <StyleBody>
           <Styleh1>ReactGuessYoutube</Styleh1>
