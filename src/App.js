@@ -8,7 +8,7 @@ import all_vn from "./all_vn.json"
 
 //const data = require("./anydata.json");
 
-import { filterByVote, createNumeralArray,jsonObjectTolist } from "./util.js";
+import { filterByVote, createNumeralArray,jsonObjectTolist ,uniqueArray} from "./util.js";
 import {
   StyleAPP,
   StyleButton,
@@ -123,7 +123,7 @@ function App() {
             <Autocomplete
         id="free-solo-demo"
         
-        options={jsonObjectTolist(quaryData.name_romanji)}
+        options={uniqueArray(jsonObjectTolist(quaryData.name_romanji))}
         renderInput={(params) => (
           <TextField {...params} label="input" margin="normal" variant="outlined"  autoComplete='off' />
         )}

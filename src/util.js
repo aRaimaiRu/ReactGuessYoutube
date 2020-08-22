@@ -1,4 +1,5 @@
 const createNumeralArray = (n) => [...Array(n).keys()];
+const uniqueArray = items =>  [...new Set(items)]
 const jsonObjectTolist = n => Object.values(n)
 const filterByVote = (t) => {
   //    console.log( Object.keys( t.key ).length ) ;
@@ -30,4 +31,4 @@ const filterByVote = (t) => {
   };
 };
 
-export { filterByVote, createNumeralArray,jsonObjectTolist };
+export { filterByVote, createNumeralArray,jsonObjectTolist ,uniqueArray};
