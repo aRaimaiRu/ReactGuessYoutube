@@ -42,6 +42,7 @@ const Stylemaibok = styled.div`
 const StyleButtonFrame = styled.div`
   flex-direction: column;
   text-align: center;
+  margin: auto;
 `;
 const Frametop = styled.div`
   top: 0;
